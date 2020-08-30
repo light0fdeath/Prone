@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Redireted</title>
+</head>
+<body>
+
+{% for course in courses %}
+
+{{course.University}} <br>
+{{course.Course_Name}}<br>
+{{course.Actual_Course_Name}}<br>
+{{course.Location}}<br>
+{{course.Actual_Fees}}<br>
+{{course.Actual_Duration}}<br>
+<hr>
+
+{% endfor %}
+<br>
+</body>
+</html>
