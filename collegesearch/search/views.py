@@ -1,5 +1,5 @@
-from django.shortcuts import render
-from django.http import JsonResponse, HttpResponse
+from django.shortcuts import render, get_object_or_404
+from django.http import JsonResponse, HttpResponse, Http404
 from .models import College
 
 
@@ -22,3 +22,11 @@ def course_search(request):
         "courses": courses,
     }
     return render(request, 'search/course_search.html', context)
+
+
+def course_detail(request, name):
+    try:
+        course = College.objects.filter(Actual_Course_Name=name)
+    except College.DoesNotExist:
+        raise Http404("No MyModel matches the given query.")
+    return render(request, 'search/course_detail.html', {'course': course})

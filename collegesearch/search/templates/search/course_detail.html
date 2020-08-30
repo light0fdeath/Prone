@@ -2,9 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Redireted</title>
 </head>
 <body>
+
+{% for course_detail in course %}
+{{course_detail.Actual_Course_Name}}<br>
+{{course_detail.course_information}}<br>
+
+
+<hr>
+
+
+
+{% endfor %}
+<br>
+
 
 </body>
 </html>
